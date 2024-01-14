@@ -88,7 +88,7 @@ class ShogiEnv(gym.Env):
         cdef unsigned long long key
 
         # 投了
-        if move == 0:
+        if move == 0: #https://tadaoyamaoka.github.io/cshogi/cshogi.html#cshogi.to_usi によると，move=0だと無効な手，詰み.
             reward = -1.0
             done = True
             return reward, done, None

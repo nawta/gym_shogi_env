@@ -28,7 +28,7 @@ class ShogiEnv(gym.Env):
 
         # actionはmoveを直接受け付ける
         # sample()は非合法手も含む
-        self.action_space = gym.spaces.Discrete(16777216)
+        self.action_space = gym.spaces.Discrete(593) #将棋の行動空間.さらに言うと状態により可変なのでプログラム側で打てる手か否か判断させる必要がある． #元々はgym.spaces.Discrete(16777216) #16MB maximum int
 
     def reset(self, sfen=None, hcp=None):
         """Reset the game environment to an initial state, or a state specified by SFEN or HCP.

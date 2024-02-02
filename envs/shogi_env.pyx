@@ -24,7 +24,7 @@ class ShogiEnv(gym.Env):
         self.repetition_hash[key] += 1
         self.is_draw = None
 
-        self.observation_space = spaces.Box(0, len(cshogi.PIECES)-1, (9, 9), dtype=np.uint8)
+        self.observation_space = spaces.MultiDiscrete([43, 9, 9], dtype=np.uint8) #元々， spaces.Box(0, len(cshogi.PIECES)-1, (9, 9), dtype=np.uint8)
 
         # actionはmoveを直接受け付ける
         # sample()は非合法手も含む
